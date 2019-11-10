@@ -11,41 +11,74 @@
     
     <item>
       <title></title>
-      <link>https://hello-world-example.github.io/Git/docs/hidden/</link>
+      <link>https://hello-world-example.github.io/Git/docs/Config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hello-world-example.github.io/Git/docs/hidden/</guid>
-      <description>This page is hidden in menu Quondam non pater est dignior ille Eurotas Latent te facies Lorem markdownum arma ignoscas vocavit quoque ille texit mandata mentis ultimus, frementes, qui in vel. Hippotades Peleus pennas conscia cuiquam Caeneus quas.
- Pater demittere evincitque reddunt Maxime adhuc pressit huc Danaas quid freta Soror ego Luctus linguam saxa ultroque prior Tatiumque inquit Saepe liquitur subita superata dederat Anius sudor  Cum honorum Latona O fallor in sustinui iussorum equidem.</description>
+      <guid>https://hello-world-example.github.io/Git/docs/Config/</guid>
+      <description> config 配置范围  --system &amp;gt; /etc/gitconfig --global &amp;gt; ~/.gitconfig --local &amp;gt; .git/config  用户信息 $ git config --global user.name &amp;#34;kail&amp;#34; $ git config --global user.email ykb553@163.com 查看配置信息 $ git config --list 查看指定配置信息
+$ git config user.name kail 查看所有配置选项 git help config 常用配置选项 # 用户名 user.name &amp;lt;String&amp;gt; # 用户邮箱 user.email &amp;lt;String&amp;gt; # 设置默认编辑器 core.editor &amp;lt;String/vim/vi/notepad&amp;gt; # input 再提交的时候自动转换成 \n, false|true 为不进行转化或者都转化 core.autocrlf &amp;lt;false|input|true&amp;gt; Read More  初次运行 Git 前的配置 自定义 Git - 配置 Git  </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://hello-world-example.github.io/Git/docs/shortcodes/</link>
+      <link>https://hello-world-example.github.io/Git/docs/FAQ/Git%E5%BF%BD%E7%95%A5%E5%B7%B2%E7%BB%8F%E8%A2%AB%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hello-world-example.github.io/Git/docs/shortcodes/</guid>
-      <description>各种样式 折叠 Default {{&amp;lt; expand &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /expand &amp;gt;}}  Expand ↕  Markdown content Lorem markdownum insigne&amp;hellip;    With Custom Label {{&amp;lt; expand &amp;#34;Custom Label&amp;#34; &amp;#34;...&amp;#34; &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /expand &amp;gt;}}  Custom Label ...  Markdown content Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa protulit, sed sed aere valvis inhaesuro Pallas animam: qui quid, ignes.</description>
+      <guid>https://hello-world-example.github.io/Git/docs/FAQ/Git%E5%BF%BD%E7%95%A5%E5%B7%B2%E7%BB%8F%E8%A2%AB%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6/</guid>
+      <description> Git忽略已经被提交的文件 .gitignore 文件只能作用于 Untracked Files，也就是那些从来没有被 Git 记录过的文件，即从未 add 及 commit 过的文件
+ 从 Git 的数据库中删除对于该文件的追踪 （git rm --cached files） 把对应的规则写入 .gitignore，让忽略真正生效； 提交＋推送。  git rm --cached 删除的是追踪状态，而不是物理文件； 如果你真的是彻底不想要了，你也可以直接 rm＋忽略＋提交
+Read More  git忽略已经被提交的文件  </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://hello-world-example.github.io/Git/docs/with-toc/</link>
+      <link>https://hello-world-example.github.io/Git/docs/FAQ/newline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hello-world-example.github.io/Git/docs/with-toc/</guid>
-      <description>默认带导航 Cognita laeva illo fracta Lorem markdownum pavent auras, surgit nunc cingentibus libet Laomedonque que est. Pastor An arbor filia foedat, ne fugit aliter, per. Helicona illas et callida neptem est Oresitrophos caput, dentibus est venit. Tenet reddite famuli praesentem fortibus, quaeque vis foret si frondes gelidos gravidae circumtulit inpulit armenta nativum.
- Te at cruciabere vides rubentis manebo Maturuit in praetemptat ruborem ignara postquam habitasse Subitarum supplevit quoque fontesque venabula spretis modo Montis tot est mali quasque gravis Quinquennem domus arsit ipse Pellem turis pugnabant locavit  Natus quaerere Pectora et sine mulcere, coniuge dum tincta incurvae.</description>
+      <guid>https://hello-world-example.github.io/Git/docs/FAQ/newline/</guid>
+      <description>Git 中的换行符问题 在各操作系统下，文本文件所使用的换行符是不一样的
+ UNIX/Linux 使用的是 0x0A（LF）\n， 早期的 Mac OS 使用的是0x0D（CR）\r，后来的 OS X 在更换内核后与 UNIX 保持一致了\n 但 DOS/Windows 一直使用 0x0D0A（CRLF \r\n）作为换行符  Git 由大名鼎鼎的 Linus 开发，最初只可运行于 *nix 系统，因此推荐只将 UNIX 风格的换行符保存入库。 但它也考虑到跨平台协作的场景，并且提供了一个“换行符自动转换”功能。
+这个功能默认处于“自动模式”，当你在签出(checkout)文件时，它试图将 UNIX 换行符（LF）替换为 Windows 的换行符（CRLF）； 当你在提交(commit)文件时，它又试图将 CRLF 替换为 LF。
+ 如果你手头的这个文件是一个包含中文字符的 UTF-8 文件，那么这个“换行符自动转换”功能 在提交(commit)时是不工作的，但签出时的转换处理没有问题。
+ 自动转化（core.autocrlf）配置 #提交时转换为LF，检出时转换为CRLF git config --global core.autocrlf true #提交时转换为LF，检出时不转换 git config --global core.autocrlf input #提交检出均不转换 git config --global core.autocrlf false  开启提交检查（core.safecrlf） #拒绝提交包含混合换行符的文件 git config --global core.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://hello-world-example.github.io/Git/docs/without-toc/</link>
+      <link>https://hello-world-example.github.io/Git/docs/FAQ/%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E5%A4%87%E6%B3%A8/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hello-world-example.github.io/Git/docs/without-toc/</guid>
-      <description>不使用导航 Tanto oblite Lorem markdownum pectora novis patenti igne sua opus aurae feras materiaque illic demersit imago et aristas questaque posset. Vomit quoque suo inhaesuro clara. Esse cumque, per referri triste. Ut exponit solisque communis in tendens vincetis agisque iamque huic bene ante vetat omina Thebae rates. Aeacus servat admonitu concidit, ad resimas vultus et rugas vultu dignamque Siphnon.
-Quam iugulum regia simulacra, plus meruit humo pecorumque haesit, ab discedunt dixit: ritu pharetramque.</description>
+      <guid>https://hello-world-example.github.io/Git/docs/FAQ/%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E5%A4%87%E6%B3%A8/</guid>
+      <description>修改提交备注 修改最近一次提交的备注 如果 commit 后还未 push 发现提交的信息表述错误或者有偏差，这时候想把备注信息改掉：
+ git commit --amend 进入编辑页面，一般是使用的默认的 vim 编辑器 编辑完成了保存 git push  修改历史提交备注 git commit --amend 选项提供了最后一次 commit 的反悔的机会。
+如果要修改历史备注信息，可以通过rebase -i，但是这种方式有个很严重的缺点：push 的时候只能强制push才能生效，如果是协作开发，强制push很可能会影响到其他人，很多时候是被禁止的。
+具体步骤如下：
+ git rebase -i HEAD~n or git rebase -i Revision Number
+ 执行之后会进入编辑页面，内容大致如下
+pick f312c035 commmit_message_3 pick 81729e86 commmit_message_2 pick 52195054 commmit_message_1 # # Commands: # p, pick &amp;lt;commit&amp;gt; = use commit # r, reword &amp;lt;commit&amp;gt; = use commit, but edit the commit message # e, edit &amp;lt;commit&amp;gt; = use commit, but stop for amending # s, squash &amp;lt;commit&amp;gt; = use commit, but meld into previous commit # f, fixup &amp;lt;commit&amp;gt; = like &amp;#34;squash&amp;#34;, but discard this commit&amp;#39;s log message # x, exec &amp;lt;command&amp;gt; = run command (the rest of the line) using shell # d, drop &amp;lt;commit&amp;gt; = remove commit # l, label &amp;lt;label&amp;gt; = label current HEAD with a name # t, reset &amp;lt;label&amp;gt; = reset HEAD to a label # m, merge [-C &amp;lt;commit&amp;gt; | -c &amp;lt;commit&amp;gt;] &amp;lt;label&amp;gt; [# &amp;lt;oneline&amp;gt;] # .</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hello-world-example.github.io/Git/docs/FAQ/%E5%9B%9B%E5%8C%BA%E4%BA%94%E6%80%81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hello-world-example.github.io/Git/docs/FAQ/%E5%9B%9B%E5%8C%BA%E4%BA%94%E6%80%81/</guid>
+      <description> Git 的四个区域 五种状态 四个区 工作区(Working Area) 暂存区(Stage) 本地仓库(Local Repository) 远程仓库(Remote Repository)
+五种状态 未修改(Origin) 已修改(Modified)&amp;amp;未追踪(Untracked) 已暂存(Staged) 已提交(Committed) 已推送(Pushed)
+Title: 提交与同步流程 工作区-&amp;gt;暂存区: git add 暂存区-&amp;gt;本地仓库: git commit 本地远程仓库--&amp;gt;工作区:git merge 本地仓库-&amp;gt;远程仓库: git push 远程仓库--&amp;gt;本地远程仓库: git fetch 远程仓库--&amp;gt;工作区: git pullTitle: 撤销流程 未修改-&amp;gt;已修改: 已修改-&amp;gt;已暂存:add 已暂存-&amp;gt;已提交:cimmit 已修改-&amp;gt;未修改: git checkout -- . 已修改-&amp;gt;未修改: git clean 已暂存-&amp;gt;已修改:git reset 已提交-&amp;gt;已修改:git reset 已暂存-&amp;gt;未修改:git reset --hard 已提交-&amp;gt;未修改:git reset --hard Read More  一张图看明白Git的四个区五种状态  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hello-world-example.github.io/Git/docs/FAQ/%E5%AD%90%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hello-world-example.github.io/Git/docs/FAQ/%E5%AD%90%E4%BB%93%E5%BA%93/</guid>
+      <description>子模块 Git 子模块允许你将一个 Git 仓库当作另外一个 Git 仓库的子目录。这允许你克隆另外一个仓库到你的项目中并且保持你的提交相对独立。
+新增子模块 $ git submodule add https://github.com/theme-next/hexo-theme-next.git &amp;lt;hexo-theme-next&amp;gt; 该命令会自动 clone 远程仓库的到本地，创建 hexo-theme-next 文件夹，同时生成 .gitmodules 文件，来记录子模块信息。
+$ git status On branch hexo-sources Your branch is up to date with &amp;#39;origin/hexo-sources&amp;#39;. Changes to be committed: (use &amp;#34;git reset HEAD &amp;lt;file&amp;gt;...&amp;#34; to unstage) new file: ../.gitmodules new file: hexo-theme-next$ cat ../.gitmodules [submodule &amp;#34;themes/hexo-theme-next&amp;#34;] path = themes/hexo-theme-next url = https://github.com/theme-next/hexo-theme-next.git 克隆一个带子模块的项目 克隆一个带子模块的项目 将得到了包含子项目的目录，但里面没有文件。必须运行两个命令：
+ git submodule init 来初始化你的本地配置文件 git submodule update 来从那个项目拉取所有数据并检出你上层项目里所列的合适的提交  Read More  .</description>
     </item>
     
   </channel>

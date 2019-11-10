@@ -4,37 +4,46 @@
   
   <url>
     <loc>https://hello-world-example.github.io/Git/_sidebar/</loc>
-    <lastmod>2019-09-01T17:23:31+08:00</lastmod>
+    <lastmod>2019-11-10T11:07:07+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://hello-world-example.github.io/Git/docs/hidden/</loc>
-    <lastmod>2019-09-01T17:23:31+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hello-world-example.github.io/Git/docs/shortcodes/</loc>
+    <loc>https://hello-world-example.github.io/Git/docs/Config/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://hello-world-example.github.io/Git/docs/with-toc/</loc>
+    <loc>https://hello-world-example.github.io/Git/docs/FAQ/Git%E5%BF%BD%E7%95%A5%E5%B7%B2%E7%BB%8F%E8%A2%AB%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://hello-world-example.github.io/Git/docs/without-toc/</loc>
-    <lastmod>2019-09-01T17:23:31+08:00</lastmod>
+    <loc>https://hello-world-example.github.io/Git/docs/FAQ/newline/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hello-world-example.github.io/Git/docs/FAQ/%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E5%A4%87%E6%B3%A8/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hello-world-example.github.io/Git/docs/FAQ/%E5%9B%9B%E5%8C%BA%E4%BA%94%E6%80%81/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hello-world-example.github.io/Git/docs/FAQ/%E5%AD%90%E4%BB%93%E5%BA%93/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://hello-world-example.github.io/Git/docs/</loc>
-    <lastmod>2019-09-01T17:23:31+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://hello-world-example.github.io/Git/</loc>
-    <lastmod>2019-09-01T17:23:31+08:00</lastmod>
+    <lastmod>2019-11-10T11:07:07+08:00</lastmod>
   </url>
   
 </urlset>
