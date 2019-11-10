@@ -2,10 +2,12 @@
 headless: true
 ---
 
-- [简介]({{< relref "/" >}})
 
-- **示例**
-  - [默认带目录]({{< relref "/docs/with-toc.md" >}})
-  - [设置不带目录]({{< relref "/docs/without-toc.md" >}})
-  - [特有功能]({{< relref "/docs/shortcodes.md" >}})  
+* [Config]({{< relref "/docs/Config.md" >}})
+* **FAQ**
+    * [Git 换行符问题]({{< relref "/docs/FAQ/newline.md" >}})
+    * [四区五态]({{< relref "/docs/FAQ/四区五态.md" >}})
+    * [Git忽略已经被提交的文件]({{< relref "/docs/FAQ/Git忽略已经被提交的文件.md" >}})
+    * [修改提交备注]({{< relref "/docs/FAQ/修改提交备注.md" >}})
+    * [子仓库]({{< relref "/docs/FAQ/子仓库.md" >}})
 
