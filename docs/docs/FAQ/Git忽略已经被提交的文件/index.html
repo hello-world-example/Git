@@ -2,10 +2,9 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.57.2" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Git | Git</title>
+<title>Git忽略已经被提交的文件 | Git</title>
 
 
 <link rel="stylesheet" href="/Git/book.min.79de1f7861b0c98f453c0a93bebf3608a280809e417787746c373699639900d7.css">
@@ -16,7 +15,6 @@
 <link rel="icon" href="/Git/favicon.png" type="image/x-icon">
 
 
-<link rel="alternate" type="application/rss+xml" href="https://hello-world-example.github.io/Git/index.xml" title="Git" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -46,7 +44,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2fGit\2f "] {
+  nav ul a[href$="\2fGit\2f docs\2f FAQ\2fGit%E5%BF%BD%E7%95%A5%E5%B7%B2%E7%BB%8F%E8%A2%AB%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6\2f "] {
       color: #004ed0;
   }
   </style>
@@ -90,40 +88,38 @@ https://github.com/alex-shpak/hugo-book
   <label for="menu-control">
     <img src="/Git/svg/menu.svg" alt="Menu" />
   </label>
-  <strong>Git</strong>
+  <strong>Git忽略已经被提交的文件</strong>
 </header>
 
       
-<article class="markdown"><ul>
-<li><p>官方</p>
+<article class="markdown">
+
+<h1 id="git忽略已经被提交的文件">Git忽略已经被提交的文件</h1>
+
+<p><strong><code>.gitignore</code> 文件只能作用于 <code>Untracked Files</code></strong>，也就是那些从来没有被 Git 记录过的文件，即从未 add 及 commit 过的文件</p>
+
+<ol>
+<li>从 Git 的数据库中删除对于该文件的追踪 （<strong>git rm <code>--cached</code>  files</strong>）</li>
+<li>把对应的规则写入 <code>.gitignore</code>，让忽略真正生效；</li>
+<li>提交＋推送。</li>
+</ol>
+
+<p><code>git rm --cached</code> 删除的是追踪状态，而不是物理文件；
+如果你真的是彻底不想要了，你也可以直接 <strong>rm＋忽略＋提交</strong></p>
+
+<h2 id="read-more">Read More</h2>
 
 <ul>
-<li>官网：<a href="https://git-scm.com/">https://git-scm.com/</a></li>
-<li>Reference： <a href="https://git-scm.com/docs">https://git-scm.com/docs</a></li>
-<li>中文 Book：<a href="https://git-scm.com/book/zh/v2/">https://git-scm.com/book/zh/v2/</a></li>
-</ul></li>
-
-<li><p>中文教程</p>
-
-<ul>
-<li><a href="https://backlog.com/git-tutorial/cn/">猴子都能懂的 Git 入门</a></li>
-</ul></li>
+<li><a href="https://segmentfault.com/q/1010000000430426">git忽略已经被提交的文件</a></li>
 </ul>
 </article>
 
       
-<div class="book-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/hello-world-example/Git/commit/7655aa73a6080dfd6ca3cef00a6b1689422c2f57" title='Last modified Nov 10, 2019 by 杨凯彬' target="_blank" rel="noopener">
-      <img src="/Git/svg/calendar.svg" alt="Changed" /> Nov 10, 2019
-    </a>
-  </div>
+<div class="book-footer justify-end">
   
   
   <div>
-    <a href="https://github.com/hello-world-example/Git/edit/master/HuGo/content/_index.md" target="_blank" rel="noopener">
+    <a href="https://github.com/hello-world-example/Git/edit/master/HuGo/content/docs/FAQ/Git%e5%bf%bd%e7%95%a5%e5%b7%b2%e7%bb%8f%e8%a2%ab%e6%8f%90%e4%ba%a4%e7%9a%84%e6%96%87%e4%bb%b6.md" target="_blank" rel="noopener">
       <img src="/Git/svg/edit.svg" alt="Edit" /> Edit this page
     </a>
   </div>
@@ -136,6 +132,17 @@ https://github.com/alex-shpak/hugo-book
 
     
   
+
+  <aside class="book-toc level-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#git忽略已经被提交的文件">Git忽略已经被提交的文件</a>
+<ul>
+<li><a href="#read-more">Read More</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
 
 
 

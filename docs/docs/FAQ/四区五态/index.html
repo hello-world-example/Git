@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>四区五态 | Git</title>
+
+
+<link rel="stylesheet" href="/Git/book.min.79de1f7861b0c98f453c0a93bebf3608a280809e417787746c373699639900d7.css">
+
+
+
+
+<link rel="icon" href="/Git/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://hello-world-example.github.io/Git/">Git</a>
+</h2>
+
+
+
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2fGit\2f docs\2f FAQ\2f%E5%9B%9B%E5%8C%BA%E4%BA%94%E6%80%81\2f "] {
+      color: #004ed0;
+  }
+  </style>
+
+<ul>
+<li><a href="/Git/docs/Config/">Config</a></li>
+<li><strong>FAQ</strong>
+
+<ul>
+<li><a href="/Git/docs/FAQ/newline/">Git 换行符问题</a></li>
+<li><a href="/Git/docs/FAQ/%E5%9B%9B%E5%8C%BA%E4%BA%94%E6%80%81/">四区五态</a></li>
+<li><a href="/Git/docs/FAQ/Git%E5%BF%BD%E7%95%A5%E5%B7%B2%E7%BB%8F%E8%A2%AB%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6/">Git忽略已经被提交的文件</a></li>
+<li><a href="/Git/docs/FAQ/%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E5%A4%87%E6%B3%A8/">修改提交备注</a></li>
+<li><a href="/Git/docs/FAQ/%E5%AD%90%E4%BB%93%E5%BA%93/">子仓库</a></li>
+</ul></li>
+</ul>
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/Git/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>四区五态</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="git-的四个区域-五种状态">Git 的四个区域 五种状态</h1>
+
+<h2 id="四个区">四个区</h2>
+
+<p>工作区(Working Area)
+暂存区(Stage)
+本地仓库(Local Repository)
+远程仓库(Remote Repository)</p>
+
+<h2 id="五种状态">五种状态</h2>
+
+<p>未修改(Origin)
+已修改(Modified)&amp;未追踪(Untracked)
+已暂存(Staged)
+已提交(Committed)
+已推送(Pushed)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-[sequence]" data-lang="[sequence]">Title: 提交与同步流程
+
+工作区-&gt;暂存区: git add
+暂存区-&gt;本地仓库: git commit
+本地远程仓库--&gt;工作区:git merge 
+本地仓库-&gt;远程仓库: git push
+远程仓库--&gt;本地远程仓库: git fetch
+远程仓库--&gt;工作区: git pull</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-[sequence]" data-lang="[sequence]">Title: 撤销流程
+未修改-&gt;已修改:
+已修改-&gt;已暂存:add
+已暂存-&gt;已提交:cimmit
+
+已修改-&gt;未修改: git checkout -- .
+已修改-&gt;未修改: git clean
+已暂存-&gt;已修改:git reset
+已提交-&gt;已修改:git reset
+已暂存-&gt;未修改:git reset --hard
+已提交-&gt;未修改:git reset --hard</code></pre></div>
+<h2 id="read-more">Read More</h2>
+
+<ul>
+<li><a href="http://geektutu.com/post/git-four-areas-five-states.html">一张图看明白Git的四个区五种状态</a></li>
+</ul>
+</article>
+
+      
+<div class="book-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/hello-world-example/Git/edit/master/HuGo/content/docs/FAQ/%e5%9b%9b%e5%8c%ba%e4%ba%94%e6%80%81.md" target="_blank" rel="noopener">
+      <img src="/Git/svg/edit.svg" alt="Edit" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc level-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#git-的四个区域-五种状态">Git 的四个区域 五种状态</a>
+<ul>
+<li><a href="#四个区">四个区</a></li>
+<li><a href="#五种状态">五种状态</a></li>
+<li><a href="#read-more">Read More</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+  
+  
+  
+</body>
+
+</html>

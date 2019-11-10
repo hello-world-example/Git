@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>修改提交备注 | Git</title>
+
+
+<link rel="stylesheet" href="/Git/book.min.79de1f7861b0c98f453c0a93bebf3608a280809e417787746c373699639900d7.css">
+
+
+
+
+<link rel="icon" href="/Git/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://hello-world-example.github.io/Git/">Git</a>
+</h2>
+
+
+
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2fGit\2f docs\2f FAQ\2f%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E5%A4%87%E6%B3%A8\2f "] {
+      color: #004ed0;
+  }
+  </style>
+
+<ul>
+<li><a href="/Git/docs/Config/">Config</a></li>
+<li><strong>FAQ</strong>
+
+<ul>
+<li><a href="/Git/docs/FAQ/newline/">Git 换行符问题</a></li>
+<li><a href="/Git/docs/FAQ/%E5%9B%9B%E5%8C%BA%E4%BA%94%E6%80%81/">四区五态</a></li>
+<li><a href="/Git/docs/FAQ/Git%E5%BF%BD%E7%95%A5%E5%B7%B2%E7%BB%8F%E8%A2%AB%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6/">Git忽略已经被提交的文件</a></li>
+<li><a href="/Git/docs/FAQ/%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E5%A4%87%E6%B3%A8/">修改提交备注</a></li>
+<li><a href="/Git/docs/FAQ/%E5%AD%90%E4%BB%93%E5%BA%93/">子仓库</a></li>
+</ul></li>
+</ul>
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/Git/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>修改提交备注</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="修改提交备注">修改提交备注</h1>
+
+<h2 id="修改最近一次提交的备注">修改最近一次提交的备注</h2>
+
+<p>如果 <code>commit</code> 后还未 <code>push</code> 发现提交的信息表述错误或者有偏差，这时候想把备注信息改掉：</p>
+
+<ol>
+<li><code>git commit --amend</code> 进入编辑页面，一般是使用的默认的 vim 编辑器</li>
+<li>编辑完成了保存</li>
+<li><code>git push</code></li>
+</ol>
+
+<h2 id="修改历史提交备注">修改历史提交备注</h2>
+
+<p><code>git commit --amend</code> 选项提供了最后一次 <code>commit</code> 的反悔的机会。</p>
+
+<p>如果要修改历史备注信息，可以通过<code>rebase -i</code>，<strong>但是这种方式有个很严重的缺点</strong>：<code>push</code> 的时候只能<strong>强制push</strong>才能生效，如果是协作开发，<strong>强制push</strong>很可能会影响到其他人，很多时候是被禁止的。</p>
+
+<p>具体步骤如下：</p>
+
+<ol>
+<li><p><code>git rebase -i HEAD~n</code> or <code>git rebase -i Revision Number</code></p></li>
+
+<li><p>执行之后会进入编辑页面，内容大致如下</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pick f312c035 commmit_message_3
+pick 81729e86 commmit_message_2
+pick <span style="color:#ae81ff">52195054</span> commmit_message_1
+#
+<span style="color:#75715e"># Commands:</span>
+<span style="color:#75715e"># p, pick &lt;commit&gt; = use commit</span>
+<span style="color:#75715e"># r, reword &lt;commit&gt; = use commit, but edit the commit message</span>
+<span style="color:#75715e"># e, edit &lt;commit&gt; = use commit, but stop for amending</span>
+<span style="color:#75715e"># s, squash &lt;commit&gt; = use commit, but meld into previous commit</span>
+<span style="color:#75715e"># f, fixup &lt;commit&gt; = like &#34;squash&#34;, but discard this commit&#39;s log message</span>
+<span style="color:#75715e"># x, exec &lt;command&gt; = run command (the rest of the line) using shell</span>
+<span style="color:#75715e"># d, drop &lt;commit&gt; = remove commit</span>
+<span style="color:#75715e"># l, label &lt;label&gt; = label current HEAD with a name</span>
+<span style="color:#75715e"># t, reset &lt;label&gt; = reset HEAD to a label</span>
+<span style="color:#75715e"># m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]</span>
+<span style="color:#75715e"># .       create a merge commit using the original merge commit&#39;s</span>
+<span style="color:#75715e"># .       message (or the oneline, if no original merge commit was</span>
+<span style="color:#75715e"># .       specified). Use -c &lt;commit&gt; to reword the commit message.</span>
+#
+<span style="color:#75715e"># These lines can be re-ordered; they are executed from top to bottom.</span>
+#
+<span style="color:#75715e"># If you remove a line here THAT COMMIT WILL BE LOST.</span>
+#
+<span style="color:#75715e">#       However, if you remove everything, the rebase will be aborted.</span>
+#
+#       
+<span style="color:#75715e"># Note that empty commits are commented out</span>
+   </code></pre></div></li>
+
+<li><p>把指定提交前面的 <code>pick</code> 改为 <code>edit</code> ，保存 退出 (vim 的操作方式)</p></li>
+
+<li><p>保存之后会提示一下信息</p>
+
+<pre><code>You can amend the commit now, with
+   
+ git commit --amend
+   
+Once you are satisfied with your changes, run
+   
+ git rebase --continue
+   
+</code></pre></li>
+
+<li><p><code>git commit --amend</code>  修改备注信息，<code>git rebase --continue</code> 继续下一个，也可以通过<code>git rebase --abort</code>  取消这次修改</p></li>
+
+<li><p><code>git rebase --continue</code> 过程中很可能出现冲突，解决完之后继续 <code>git rebase --continue</code> 直到出现 <strong>No rebase in progress?</strong></p></li>
+
+<li><p><code>rebase</code> 结束之后，版本历史实际上落后于 <code>origin</code> 的，这时候就需要<strong>强制push</strong> 覆盖 <code>origin</code>  的版本（<strong>强制push</strong> 是一个危险操作，需要慎用）</p></li>
+</ol>
+
+<h2 id="merge-时-修改备注">merge 时 修改备注</h2>
+
+<p>在合并分支的时候，如果被合并分支上的提交备注很随意，并没有实际的参考意义，可以 通过 <code>--squash</code> 把合并过来的内容，压缩成一次提交。</p>
+
+<p><code>--squash</code>选项的含义是：本地文件内容与不使用该选项的<strong>合并结果相同</strong>，<strong>但是不提交、不移动HEAD</strong>，因此需要一条额外的commit命令。其效果相当于将被合并分支上的多个commit合并成一个，放在当前分支上，原来的commit历史则没有拿过来。</p>
+
+<blockquote>
+<p>判断是否使用<code>--squash</code>选项最根本的标准是，待合并分支上的历史是否有意义。</p>
+
+<p>—— 懒惰的程序员 <a href="https://www.wanglianghome.org/2010/08/05/git-merge-squash/">git merge –squash介绍</a></p>
+</blockquote>
+</article>
+
+      
+<div class="book-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/hello-world-example/Git/edit/master/HuGo/content/docs/FAQ/%e4%bf%ae%e6%94%b9%e6%8f%90%e4%ba%a4%e5%a4%87%e6%b3%a8.md" target="_blank" rel="noopener">
+      <img src="/Git/svg/edit.svg" alt="Edit" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc level-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#修改提交备注">修改提交备注</a>
+<ul>
+<li><a href="#修改最近一次提交的备注">修改最近一次提交的备注</a></li>
+<li><a href="#修改历史提交备注">修改历史提交备注</a></li>
+<li><a href="#merge-时-修改备注">merge 时 修改备注</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+  
+  
+  
+</body>
+
+</html>
