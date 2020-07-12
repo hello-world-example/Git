@@ -4,6 +4,7 @@ headless: true
 
 
 * [Config]({{< relref "/docs/Config.md" >}})
+* [多远程分支]({{< relref "/docs/Multi-Remote.md" >}})
 * **FAQ**
     * [Git 换行符问题]({{< relref "/docs/FAQ/newline.md" >}})
     * [四区五态]({{< relref "/docs/FAQ/四区五态.md" >}})
