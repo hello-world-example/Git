@@ -5,15 +5,19 @@
 	<meta name="generator" content="Hugo 0.65.3" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="  官方
+ 官网：https://git-scm.com/ Reference： https://git-scm.com/docs 中文 Book：https://git-scm.com/book/zh/v2/    中文教程
+ 猴子都能懂的 Git 入门    jGit
+ 官网： https://www.eclipse.org/jgit/ Embedding Git in your Applications - JGit    "><meta property="og:title" content="Git" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hello-world-example.github.io/Git/" />
+
 <title>Git | Git</title>
-
-
-<link rel="stylesheet" href="/Git/book.min.a2277534155c5e81ce2c8ca6a4cd295525f25c75788a2e4e72c3310491c743b1.css">
-
-
-
-
 <link rel="icon" href="/Git/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/Git/book.min.d436f463c9471cfab26a8b71cd2f50b6abf5225806391453da4ca111d1834fef.css" integrity="sha256-1Db0Y8lHHPqyaotxzS9Qtqv1IlgGORRT2kyhEdGDT&#43;8=">
 
 
 <link rel="alternate" type="application/rss+xml" href="https://hello-world-example.github.io/Git/index.xml" title="Git" />
@@ -26,13 +30,14 @@ https://github.com/alex-shpak/hugo-book
 </head>
 
 <body>
-  <input type="checkbox" style="display: none" id="menu-control" />
-  <main class="flex container">
-
-    <aside class="book-menu fixed">
-      <nav>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
 <h2 class="book-brand">
-  <a href="https://hello-world-example.github.io/Git/">Git</a>
+  <a href="/Git"><span>Git</span>
+  </a>
 </h2>
 
 
@@ -40,18 +45,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-    
-  
-  
-  
 
-  <style>
-  nav ul a[href$="\2fGit\2f "] {
-      color: #004ed0;
-  }
-  </style>
 
-<ul>
+
+
+
+
+  <ul>
 <li><a href="/Git/docs/Config/">Config</a></li>
 <li><a href="/Git/docs/Multi-Repo/">多远程仓库</a></li>
 <li><strong>FAQ</strong>
@@ -71,31 +71,51 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+
+
+
 </nav>
 
 
-<script>
-(function() {
-  var menu = document.querySelector("aside.book-menu nav");
-  addEventListener("beforeunload", function(event) {
-    localStorage.setItem("menu.scrollTop", menu.scrollTop);
-  });
-  menu.scrollTop = localStorage.getItem("menu.scrollTop");
-})();
-</script>
 
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
     </aside>
 
     <div class="book-page">
-      <header class="flex align-center justify-between book-header">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/Git/svg/menu.svg" alt="Menu" />
+    <img src="/Git/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
+
   <strong>Git</strong>
-</header>
+
+  <label for="toc-control">
+    <img src="/Git/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents"></nav>
+
+
+    </aside>
+  
+ 
+      </header>
 
       
-<article class="markdown"><ul>
+      
+  <article class="markdown"><ul>
 <li>
 <p><strong>官方</strong></p>
 <ul>
@@ -119,43 +139,84 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 </article>
-
+ 
       
-<div class="book-footer justify-between">
-  
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
   <div>
     
-    <a href="https://github.com/hello-world-example/Git/commit/594814233987d14f42d5a360ff7e2153b94daa8a" title='Last modified Nov 10, 2019 by 杨凯彬' target="_blank" rel="noopener">
-      <img src="/Git/svg/calendar.svg" alt="Changed" /> Nov 10, 2019
+    <a class="flex align-center" href="https://github.com/hello-world-example/Git/commit/f6db6e21e5925fa2725df4f508435d832fea71ee" title='Last modified by kaibin.yang | Jan 29, 2021' target="_blank" rel="noopener">
+      <img src="/Git/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Jan 29, 2021</span>
     </a>
   </div>
-  
-  
+
+
+
   <div>
-    <a href="https://github.com/hello-world-example/Git/edit/master/HuGo/content/_index.md" target="_blank" rel="noopener">
-      <img src="/Git/svg/edit.svg" alt="Edit" /> Edit this page
+    <a class="flex align-center" href="https://github.com/hello-world-example/Git/edit/master/HuGo/content/_index.md" target="_blank" rel="noopener">
+      <img src="/Git/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
     </a>
   </div>
-  
+
 </div>
 
+ 
+        
+<script>
+var images = document.getElementsByTagName("img")
+console.info(images.length)
+for(var i=0; i<images.length; i++){
+  var image = images[i]
+  var src = image.getAttribute("src");
+  if(src.startsWith("-images")){
+    image.setAttribute("src", "../" + src)
+  }
+}
+</script>
+
+      </footer>
 
       
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-  
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents"></nav>
 
-  <aside class="book-toc level-3 fixed">
-    <nav id="TableOfContents"></nav>
-  </aside>
-
-
-
+ 
+    </aside>
+    
   </main>
-  
-  
+
   
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,15 +4,18 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="config 配置范围   --system &gt; /etc/gitconfig  --global &gt; ~/.gitconfig  --local &gt; .git/config  用户信息 $ git config --global user.name &#34;kail&#34; $ git config --global user.email ykb553@163.com 查看配置信息 $ git config --list 查看指定配置信息
+$ git config user.name kail 查看所有配置选项 git help config 常用配置选项 # 用户名 user.name &lt;String&gt; # 用户邮箱 user.email &lt;String&gt; # 设置默认编辑器 core.editor &lt;String/vim/vi/notepad&gt; # input 再提交的时候自动转换成 \n, false|true 为不进行转化或者都转化 core.autocrlf &lt;false|input|true&gt; Read More  初次运行 Git 前的配置 自定义 Git - 配置 Git  "><meta property="og:title" content="" />
+<meta property="og:description" content="config 配置范围   --system &gt; /etc/gitconfig  --global &gt; ~/.gitconfig  --local &gt; .git/config  用户信息 $ git config --global user.name &#34;kail&#34; $ git config --global user.email ykb553@163.com 查看配置信息 $ git config --list 查看指定配置信息
+$ git config user.name kail 查看所有配置选项 git help config 常用配置选项 # 用户名 user.name &lt;String&gt; # 用户邮箱 user.email &lt;String&gt; # 设置默认编辑器 core.editor &lt;String/vim/vi/notepad&gt; # input 再提交的时候自动转换成 \n, false|true 为不进行转化或者都转化 core.autocrlf &lt;false|input|true&gt; Read More  初次运行 Git 前的配置 自定义 Git - 配置 Git  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hello-world-example.github.io/Git/docs/Config/" />
+<meta property="article:modified_time" content="2021-01-29T14:07:42+08:00" />
 <title>Config | Git</title>
-
-
-<link rel="stylesheet" href="/Git/book.min.a2277534155c5e81ce2c8ca6a4cd295525f25c75788a2e4e72c3310491c743b1.css">
-
-
-
-
 <link rel="icon" href="/Git/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/Git/book.min.d436f463c9471cfab26a8b71cd2f50b6abf5225806391453da4ca111d1834fef.css" integrity="sha256-1Db0Y8lHHPqyaotxzS9Qtqv1IlgGORRT2kyhEdGDT&#43;8=">
 
 
 <!--
@@ -24,13 +27,14 @@ https://github.com/alex-shpak/hugo-book
 </head>
 
 <body>
-  <input type="checkbox" style="display: none" id="menu-control" />
-  <main class="flex container">
-
-    <aside class="book-menu fixed">
-      <nav>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
 <h2 class="book-brand">
-  <a href="https://hello-world-example.github.io/Git/">Git</a>
+  <a href="/Git"><span>Git</span>
+  </a>
 </h2>
 
 
@@ -38,19 +42,14 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-    
-  
-  
-  
 
-  <style>
-  nav ul a[href$="\2fGit\2f docs\2f Config\2f "] {
-      color: #004ed0;
-  }
-  </style>
 
-<ul>
-<li><a href="/Git/docs/Config/">Config</a></li>
+
+
+
+
+  <ul>
+<li><a href="/Git/docs/Config/"class=active>Config</a></li>
 <li><a href="/Git/docs/Multi-Repo/">多远程仓库</a></li>
 <li><strong>FAQ</strong>
 <ul>
@@ -69,31 +68,60 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+
+
+
 </nav>
 
 
-<script>
-(function() {
-  var menu = document.querySelector("aside.book-menu nav");
-  addEventListener("beforeunload", function(event) {
-    localStorage.setItem("menu.scrollTop", menu.scrollTop);
-  });
-  menu.scrollTop = localStorage.getItem("menu.scrollTop");
-})();
-</script>
 
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
     </aside>
 
     <div class="book-page">
-      <header class="flex align-center justify-between book-header">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/Git/svg/menu.svg" alt="Menu" />
+    <img src="/Git/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
+
   <strong>Config</strong>
-</header>
+
+  <label for="toc-control">
+    <img src="/Git/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#配置范围">配置范围</a></li>
+    <li><a href="#用户信息">用户信息</a></li>
+    <li><a href="#查看配置信息">查看配置信息</a></li>
+    <li><a href="#查看所有配置选项">查看所有配置选项</a></li>
+    <li><a href="#常用配置选项">常用配置选项</a></li>
+    <li><a href="#read-more">Read More</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
 
       
-<article class="markdown"><h1 id="config">config</h1>
+      
+  <article class="markdown"><h1 id="config">config</h1>
 <h2 id="配置范围">配置范围</h2>
 <ul>
 <li><code> --system</code> &gt; <code>/etc/gitconfig</code></li>
@@ -128,35 +156,65 @@ core.autocrlf &lt;false|input|true&gt;
 <li><a href="https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-%E9%85%8D%E7%BD%AE-Git">自定义 Git - 配置 Git</a></li>
 </ul>
 </article>
-
+ 
       
-<div class="book-footer justify-between">
-  
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
   <div>
     
-    <a href="https://github.com/hello-world-example/Git/commit/651a1c4ae506d43f54c58d13656b2a26a34644dc" title='Last modified Nov 10, 2019 by 杨凯彬' target="_blank" rel="noopener">
-      <img src="/Git/svg/calendar.svg" alt="Changed" /> Nov 10, 2019
+    <a class="flex align-center" href="https://github.com/hello-world-example/Git/commit/f6db6e21e5925fa2725df4f508435d832fea71ee" title='Last modified by kaibin.yang | Jan 29, 2021' target="_blank" rel="noopener">
+      <img src="/Git/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Jan 29, 2021</span>
     </a>
   </div>
-  
-  
+
+
+
   <div>
-    <a href="https://github.com/hello-world-example/Git/edit/master/HuGo/content/docs/Config.md" target="_blank" rel="noopener">
-      <img src="/Git/svg/edit.svg" alt="Edit" /> Edit this page
+    <a class="flex align-center" href="https://github.com/hello-world-example/Git/edit/master/HuGo/content/docs/Config.md" target="_blank" rel="noopener">
+      <img src="/Git/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
     </a>
   </div>
-  
+
 </div>
 
+ 
+        
+<script>
+var images = document.getElementsByTagName("img")
+console.info(images.length)
+for(var i=0; i<images.length; i++){
+  var image = images[i]
+  var src = image.getAttribute("src");
+  if(src.startsWith("-images")){
+    image.setAttribute("src", "../" + src)
+  }
+}
+</script>
+
+      </footer>
 
       
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-  
-
-  <aside class="book-toc level-3 fixed">
-    <nav id="TableOfContents">
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
   <ul>
     <li><a href="#配置范围">配置范围</a></li>
     <li><a href="#用户信息">用户信息</a></li>
@@ -166,14 +224,25 @@ core.autocrlf &lt;false|input|true&gt;
     <li><a href="#read-more">Read More</a></li>
   </ul>
 </nav>
-  </aside>
 
-
-
+ 
+    </aside>
+    
   </main>
-  
-  
+
   
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

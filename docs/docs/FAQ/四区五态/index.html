@@ -4,15 +4,20 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Git 的四个区域 五种状态 四个区 工作区(Working Area) 暂存区(Stage) 本地仓库(Local Repository) 远程仓库(Remote Repository)
+五种状态 未修改(Origin) 已修改(Modified)&amp;未追踪(Untracked) 已暂存(Staged) 已提交(Committed) 已推送(Pushed)
+Title: 提交与同步流程 工作区-&gt;暂存区: git add 暂存区-&gt;本地仓库: git commit 本地远程仓库--&gt;工作区:git merge 本地仓库-&gt;远程仓库: git push 远程仓库--&gt;本地远程仓库: git fetch 远程仓库--&gt;工作区: git pull Title: 撤销流程 未修改-&gt;已修改: 已修改-&gt;已暂存:add 已暂存-&gt;已提交:cimmit 已修改-&gt;未修改: git checkout -- . 已修改-&gt;未修改: git clean 已暂存-&gt;已修改:git reset 已提交-&gt;已修改:git reset 已暂存-&gt;未修改:git reset --hard 已提交-&gt;未修改:git reset --hard Read More  一张图看明白Git的四个区五种状态  "><meta property="og:title" content="" />
+<meta property="og:description" content="Git 的四个区域 五种状态 四个区 工作区(Working Area) 暂存区(Stage) 本地仓库(Local Repository) 远程仓库(Remote Repository)
+五种状态 未修改(Origin) 已修改(Modified)&amp;未追踪(Untracked) 已暂存(Staged) 已提交(Committed) 已推送(Pushed)
+Title: 提交与同步流程 工作区-&gt;暂存区: git add 暂存区-&gt;本地仓库: git commit 本地远程仓库--&gt;工作区:git merge 本地仓库-&gt;远程仓库: git push 远程仓库--&gt;本地远程仓库: git fetch 远程仓库--&gt;工作区: git pull Title: 撤销流程 未修改-&gt;已修改: 已修改-&gt;已暂存:add 已暂存-&gt;已提交:cimmit 已修改-&gt;未修改: git checkout -- . 已修改-&gt;未修改: git clean 已暂存-&gt;已修改:git reset 已提交-&gt;已修改:git reset 已暂存-&gt;未修改:git reset --hard 已提交-&gt;未修改:git reset --hard Read More  一张图看明白Git的四个区五种状态  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hello-world-example.github.io/Git/docs/FAQ/%E5%9B%9B%E5%8C%BA%E4%BA%94%E6%80%81/" />
+
 <title>四区五态 | Git</title>
-
-
-<link rel="stylesheet" href="/Git/book.min.a2277534155c5e81ce2c8ca6a4cd295525f25c75788a2e4e72c3310491c743b1.css">
-
-
-
-
 <link rel="icon" href="/Git/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/Git/book.min.d436f463c9471cfab26a8b71cd2f50b6abf5225806391453da4ca111d1834fef.css" integrity="sha256-1Db0Y8lHHPqyaotxzS9Qtqv1IlgGORRT2kyhEdGDT&#43;8=">
 
 
 <!--
@@ -24,13 +29,14 @@ https://github.com/alex-shpak/hugo-book
 </head>
 
 <body>
-  <input type="checkbox" style="display: none" id="menu-control" />
-  <main class="flex container">
-
-    <aside class="book-menu fixed">
-      <nav>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
 <h2 class="book-brand">
-  <a href="https://hello-world-example.github.io/Git/">Git</a>
+  <a href="/Git"><span>Git</span>
+  </a>
 </h2>
 
 
@@ -38,24 +44,19 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-    
-  
-  
-  
 
-  <style>
-  nav ul a[href$="\2fGit\2f docs\2f FAQ\2f%E5%9B%9B%E5%8C%BA%E4%BA%94%E6%80%81\2f "] {
-      color: #004ed0;
-  }
-  </style>
 
-<ul>
+
+
+
+
+  <ul>
 <li><a href="/Git/docs/Config/">Config</a></li>
 <li><a href="/Git/docs/Multi-Repo/">多远程仓库</a></li>
 <li><strong>FAQ</strong>
 <ul>
 <li><a href="/Git/docs/FAQ/newline/">Git 换行符问题</a></li>
-<li><a href="/Git/docs/FAQ/%E5%9B%9B%E5%8C%BA%E4%BA%94%E6%80%81/">四区五态</a></li>
+<li><a href="/Git/docs/FAQ/%E5%9B%9B%E5%8C%BA%E4%BA%94%E6%80%81/"class=active>四区五态</a></li>
 <li><a href="/Git/docs/FAQ/Git%E5%BF%BD%E7%95%A5%E5%B7%B2%E7%BB%8F%E8%A2%AB%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6/">Git忽略已经被提交的文件</a></li>
 <li><a href="/Git/docs/FAQ/%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E5%A4%87%E6%B3%A8/">修改提交备注</a></li>
 <li><a href="/Git/docs/FAQ/%E5%AD%90%E4%BB%93%E5%BA%93/">子仓库</a></li>
@@ -69,31 +70,57 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+
+
+
 </nav>
 
 
-<script>
-(function() {
-  var menu = document.querySelector("aside.book-menu nav");
-  addEventListener("beforeunload", function(event) {
-    localStorage.setItem("menu.scrollTop", menu.scrollTop);
-  });
-  menu.scrollTop = localStorage.getItem("menu.scrollTop");
-})();
-</script>
 
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
     </aside>
 
     <div class="book-page">
-      <header class="flex align-center justify-between book-header">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/Git/svg/menu.svg" alt="Menu" />
+    <img src="/Git/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
+
   <strong>四区五态</strong>
-</header>
+
+  <label for="toc-control">
+    <img src="/Git/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#四个区">四个区</a></li>
+    <li><a href="#五种状态">五种状态</a></li>
+    <li><a href="#read-more">Read More</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
 
       
-<article class="markdown"><h1 id="git-的四个区域-五种状态">Git 的四个区域 五种状态</h1>
+      
+  <article class="markdown"><h1 id="git-的四个区域-五种状态">Git 的四个区域 五种状态</h1>
 <h2 id="四个区">四个区</h2>
 <p>工作区(Working Area)
 暂存区(Stage)
@@ -129,42 +156,82 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="http://geektutu.com/post/git-four-areas-five-states.html">一张图看明白Git的四个区五种状态</a></li>
 </ul>
 </article>
-
+ 
       
-<div class="book-footer justify-end">
-  
-  
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
   <div>
-    <a href="https://github.com/hello-world-example/Git/edit/master/HuGo/content/docs/FAQ/%e5%9b%9b%e5%8c%ba%e4%ba%94%e6%80%81.md" target="_blank" rel="noopener">
-      <img src="/Git/svg/edit.svg" alt="Edit" /> Edit this page
+    <a class="flex align-center" href="https://github.com/hello-world-example/Git/edit/master/HuGo/content/docs/FAQ/%e5%9b%9b%e5%8c%ba%e4%ba%94%e6%80%81.md" target="_blank" rel="noopener">
+      <img src="/Git/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
     </a>
   </div>
-  
+
 </div>
 
+ 
+        
+<script>
+var images = document.getElementsByTagName("img")
+console.info(images.length)
+for(var i=0; i<images.length; i++){
+  var image = images[i]
+  var src = image.getAttribute("src");
+  if(src.startsWith("-images")){
+    image.setAttribute("src", "../" + src)
+  }
+}
+</script>
+
+      </footer>
 
       
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-  
-
-  <aside class="book-toc level-3 fixed">
-    <nav id="TableOfContents">
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
   <ul>
     <li><a href="#四个区">四个区</a></li>
     <li><a href="#五种状态">五种状态</a></li>
     <li><a href="#read-more">Read More</a></li>
   </ul>
 </nav>
-  </aside>
 
-
-
+ 
+    </aside>
+    
   </main>
-  
-  
+
   
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
