@@ -1,5 +1,6 @@
-
 # config
+
+
 
 ## 配置范围
 
@@ -8,36 +9,45 @@
 - ` --local`  > `.git/config`
 
 
+
+
 ## 用户信息
 
-```git
+```bash
 $ git config --global user.name "kail"
 $ git config --global user.email ykb553@163.com
 ```
 
 
+
 ## 查看配置信息
 
-```git
+```bash
 $ git config --list
 ```
 
+
+
 查看指定配置信息
 
-```git
+```bash
 $ git config user.name
 kail
 ```
 
+
+
 ## 查看所有配置选项
 
-```git
+```bash
 git help config
 ```
 
+
+
 ## 常用配置选项
 
-```git
+```bash
 # 用户名
 user.name <String>
 
@@ -50,6 +60,7 @@ core.editor <String/vim/vi/notepad>
 # input 再提交的时候自动转换成 \n, false|true 为不进行转化或者都转化
 core.autocrlf <false|input|true>
 ```
+
 
 
 ## Read More

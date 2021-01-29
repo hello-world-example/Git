@@ -7,7 +7,7 @@
 <title>Config | Git</title>
 
 
-<link rel="stylesheet" href="/Git/book.min.79de1f7861b0c98f453c0a93bebf3608a280809e417787746c373699639900d7.css">
+<link rel="stylesheet" href="/Git/book.min.a2277534155c5e81ce2c8ca6a4cd295525f25c75788a2e4e72c3310491c743b1.css">
 
 
 
@@ -51,15 +51,16 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/Git/docs/Config/">Config</a></li>
+<li><a href="/Git/docs/Multi-Repo/">多远程仓库</a></li>
 <li><strong>FAQ</strong>
-
 <ul>
 <li><a href="/Git/docs/FAQ/newline/">Git 换行符问题</a></li>
 <li><a href="/Git/docs/FAQ/%E5%9B%9B%E5%8C%BA%E4%BA%94%E6%80%81/">四区五态</a></li>
 <li><a href="/Git/docs/FAQ/Git%E5%BF%BD%E7%95%A5%E5%B7%B2%E7%BB%8F%E8%A2%AB%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6/">Git忽略已经被提交的文件</a></li>
 <li><a href="/Git/docs/FAQ/%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E5%A4%87%E6%B3%A8/">修改提交备注</a></li>
 <li><a href="/Git/docs/FAQ/%E5%AD%90%E4%BB%93%E5%BA%93/">子仓库</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -92,42 +93,36 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="config">config</h1>
-
+<article class="markdown"><h1 id="config">config</h1>
 <h2 id="配置范围">配置范围</h2>
-
 <ul>
-<li><code>--system</code> &gt; <code>/etc/gitconfig</code></li>
-<li><code>--global</code> &gt; <code>~/.gitconfig</code></li>
-<li><code>--local</code>  &gt; <code>.git/config</code></li>
+<li><code> --system</code> &gt; <code>/etc/gitconfig</code></li>
+<li><code> --global</code> &gt; <code>~/.gitconfig</code></li>
+<li><code> --local</code>  &gt; <code>.git/config</code></li>
 </ul>
-
 <h2 id="用户信息">用户信息</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">$ git config --global user.name &#34;kail&#34;
-$ git config --global user.email ykb553@163.com</code></pre></div>
-<h2 id="查看配置信息">查看配置信息</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">$ git config --list</code></pre></div>
-<p>查看指定配置信息</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">$ git config user.name
-kail</code></pre></div>
-<h2 id="查看所有配置选项">查看所有配置选项</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git">git help config</code></pre></div>
-<h2 id="常用配置选项">常用配置选项</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-git" data-lang="git"># 用户名
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git config --global user.name <span style="color:#e6db74">&#34;kail&#34;</span>
+$ git config --global user.email ykb553@163.com
+</code></pre></div><h2 id="查看配置信息">查看配置信息</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git config --list
+</code></pre></div><p>查看指定配置信息</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git config user.name
+kail
+</code></pre></div><h2 id="查看所有配置选项">查看所有配置选项</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git help config
+</code></pre></div><h2 id="常用配置选项">常用配置选项</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 用户名</span>
 user.name &lt;String&gt;
 
-# 用户邮箱
+<span style="color:#75715e"># 用户邮箱</span>
 user.email &lt;String&gt;
 
-# 设置默认编辑器
+<span style="color:#75715e"># 设置默认编辑器</span>
 core.editor &lt;String/vim/vi/notepad&gt;
 
-# input 再提交的时候自动转换成 \n, false|true 为不进行转化或者都转化
-core.autocrlf &lt;false|input|true&gt;</code></pre></div>
-<h2 id="read-more">Read More</h2>
-
+<span style="color:#75715e"># input 再提交的时候自动转换成 \n, false|true 为不进行转化或者都转化</span>
+core.autocrlf &lt;false|input|true&gt;
+</code></pre></div><h2 id="read-more">Read More</h2>
 <ul>
 <li><a href="https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE">初次运行 Git 前的配置</a></li>
 <li><a href="https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-%E9%85%8D%E7%BD%AE-Git">自定义 Git - 配置 Git</a></li>
@@ -162,17 +157,14 @@ core.autocrlf &lt;false|input|true&gt;</code></pre></div>
 
   <aside class="book-toc level-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#config">config</a>
-<ul>
-<li><a href="#配置范围">配置范围</a></li>
-<li><a href="#用户信息">用户信息</a></li>
-<li><a href="#查看配置信息">查看配置信息</a></li>
-<li><a href="#查看所有配置选项">查看所有配置选项</a></li>
-<li><a href="#常用配置选项">常用配置选项</a></li>
-<li><a href="#read-more">Read More</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#配置范围">配置范围</a></li>
+    <li><a href="#用户信息">用户信息</a></li>
+    <li><a href="#查看配置信息">查看配置信息</a></li>
+    <li><a href="#查看所有配置选项">查看所有配置选项</a></li>
+    <li><a href="#常用配置选项">常用配置选项</a></li>
+    <li><a href="#read-more">Read More</a></li>
+  </ul>
 </nav>
   </aside>
 

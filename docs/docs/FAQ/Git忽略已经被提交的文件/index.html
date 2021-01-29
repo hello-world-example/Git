@@ -7,7 +7,7 @@
 <title>Git忽略已经被提交的文件 | Git</title>
 
 
-<link rel="stylesheet" href="/Git/book.min.79de1f7861b0c98f453c0a93bebf3608a280809e417787746c373699639900d7.css">
+<link rel="stylesheet" href="/Git/book.min.a2277534155c5e81ce2c8ca6a4cd295525f25c75788a2e4e72c3310491c743b1.css">
 
 
 
@@ -51,15 +51,16 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/Git/docs/Config/">Config</a></li>
+<li><a href="/Git/docs/Multi-Repo/">多远程仓库</a></li>
 <li><strong>FAQ</strong>
-
 <ul>
 <li><a href="/Git/docs/FAQ/newline/">Git 换行符问题</a></li>
 <li><a href="/Git/docs/FAQ/%E5%9B%9B%E5%8C%BA%E4%BA%94%E6%80%81/">四区五态</a></li>
 <li><a href="/Git/docs/FAQ/Git%E5%BF%BD%E7%95%A5%E5%B7%B2%E7%BB%8F%E8%A2%AB%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6/">Git忽略已经被提交的文件</a></li>
 <li><a href="/Git/docs/FAQ/%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E5%A4%87%E6%B3%A8/">修改提交备注</a></li>
 <li><a href="/Git/docs/FAQ/%E5%AD%90%E4%BB%93%E5%BA%93/">子仓库</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -92,23 +93,16 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="git忽略已经被提交的文件">Git忽略已经被提交的文件</h1>
-
+<article class="markdown"><h1 id="git忽略已经被提交的文件">Git忽略已经被提交的文件</h1>
 <p><strong><code>.gitignore</code> 文件只能作用于 <code>Untracked Files</code></strong>，也就是那些从来没有被 Git 记录过的文件，即从未 add 及 commit 过的文件</p>
-
 <ol>
 <li>从 Git 的数据库中删除对于该文件的追踪 （<strong>git rm <code>--cached</code>  files</strong>）</li>
 <li>把对应的规则写入 <code>.gitignore</code>，让忽略真正生效；</li>
 <li>提交＋推送。</li>
 </ol>
-
 <p><code>git rm --cached</code> 删除的是追踪状态，而不是物理文件；
 如果你真的是彻底不想要了，你也可以直接 <strong>rm＋忽略＋提交</strong></p>
-
 <h2 id="read-more">Read More</h2>
-
 <ul>
 <li><a href="https://segmentfault.com/q/1010000000430426">git忽略已经被提交的文件</a></li>
 </ul>
@@ -135,12 +129,9 @@ https://github.com/alex-shpak/hugo-book
 
   <aside class="book-toc level-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#git忽略已经被提交的文件">Git忽略已经被提交的文件</a>
-<ul>
-<li><a href="#read-more">Read More</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#read-more">Read More</a></li>
+  </ul>
 </nav>
   </aside>
 

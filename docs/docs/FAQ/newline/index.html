@@ -7,7 +7,7 @@
 <title>Newline | Git</title>
 
 
-<link rel="stylesheet" href="/Git/book.min.79de1f7861b0c98f453c0a93bebf3608a280809e417787746c373699639900d7.css">
+<link rel="stylesheet" href="/Git/book.min.a2277534155c5e81ce2c8ca6a4cd295525f25c75788a2e4e72c3310491c743b1.css">
 
 
 
@@ -51,15 +51,16 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/Git/docs/Config/">Config</a></li>
+<li><a href="/Git/docs/Multi-Repo/">多远程仓库</a></li>
 <li><strong>FAQ</strong>
-
 <ul>
 <li><a href="/Git/docs/FAQ/newline/">Git 换行符问题</a></li>
 <li><a href="/Git/docs/FAQ/%E5%9B%9B%E5%8C%BA%E4%BA%94%E6%80%81/">四区五态</a></li>
 <li><a href="/Git/docs/FAQ/Git%E5%BF%BD%E7%95%A5%E5%B7%B2%E7%BB%8F%E8%A2%AB%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6/">Git忽略已经被提交的文件</a></li>
 <li><a href="/Git/docs/FAQ/%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E5%A4%87%E6%B3%A8/">修改提交备注</a></li>
 <li><a href="/Git/docs/FAQ/%E5%AD%90%E4%BB%93%E5%BA%93/">子仓库</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -92,30 +93,21 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="git-中的换行符问题">Git 中的换行符问题</h1>
-
+<article class="markdown"><h1 id="git-中的换行符问题">Git 中的换行符问题</h1>
 <p>在各操作系统下，文本文件所使用的换行符是不一样的</p>
-
 <ul>
 <li>UNIX/Linux 使用的是 0x0A（<code>LF</code>）<code>\n</code>，</li>
 <li>早期的 Mac OS 使用的是0x0D（<code>CR</code>）<code>\r</code>，后来的 OS X 在更换内核后与 UNIX 保持一致了<code>\n</code></li>
 <li>但 DOS/Windows 一直使用 0x0D0A（<code>CRLF</code> <code>\r\n</code>）作为换行符</li>
 </ul>
-
 <p>Git 由大名鼎鼎的 Linus 开发，最初只可运行于 *nix 系统，因此推荐只将 UNIX 风格的换行符保存入库。
 但它也考虑到跨平台协作的场景，并且<strong>提供了一个“换行符自动转换”功能</strong>。</p>
-
 <p>这个功能默认处于“自动模式”，<strong>当你在签出(checkout)文件时，它试图将 UNIX 换行符（LF）替换为 Windows 的换行符（CRLF）</strong>；
 当<strong>你在提交(commit)文件时，它又试图将 CRLF 替换为 LF</strong>。</p>
-
 <blockquote>
 <p>如果你手头的这个文件是一个包含中文字符的 UTF-8 文件，那么这个“换行符自动转换”功能 在提交(commit)时是不工作的，但签出时的转换处理没有问题。</p>
 </blockquote>
-
-<h2 id="自动转化-core-autocrlf-配置">自动转化（<code>core.autocrlf</code>）配置</h2>
-
+<h2 id="自动转化coreautocrlf配置">自动转化（<code>core.autocrlf</code>）配置</h2>
 <pre><code>#提交时转换为LF，检出时转换为CRLF
 git config --global core.autocrlf true   
 
@@ -124,10 +116,7 @@ git config --global core.autocrlf input
 
 #提交检出均不转换
 git config --global core.autocrlf false
-</code></pre>
-
-<h2 id="开启提交检查-core-safecrlf">开启提交检查（<code>core.safecrlf</code>）</h2>
-
+</code></pre><h2 id="开启提交检查coresafecrlf">开启提交检查（<code>core.safecrlf</code>）</h2>
 <pre><code>#拒绝提交包含混合换行符的文件
 git config --global core.safecrlf true   
 
@@ -136,44 +125,29 @@ git config --global core.safecrlf false
 
 #提交包含混合换行符的文件时给出警告
 git config --global core.safecrlf warn
-</code></pre>
-
-<h2 id="tortoisegit-设置">TortoiseGit 设置</h2>
-
+</code></pre><h2 id="tortoisegit-设置">TortoiseGit 设置</h2>
 <p><code>TortoiseGit</code> → <code>Settings</code> → <code>Git</code></p>
-
 <ul>
 <li><code>Auto CrLf convert</code> 下
-
 <ul>
 <li>去掉 <code>AutoCrlf</code></li>
 <li><code>SafeCrlf</code> 选为 <code>true</code></li>
-</ul></li>
+</ul>
+</li>
 <li>勾中 <code>Save as Global</code></li>
 </ul>
-
 <h2 id="修改-git-配置文件-gitconfig">修改 Git 配置文件 <code>.gitconfig</code></h2>
-
 <p>以上通过 git 命令，或者是图形界面，实际上最终改的都是配置文件</p>
-
 <pre><code>[core]
     autocrlf = false
     safecrlf = true
 
-</code></pre>
-
-<h2 id="ide-换行符设置为-unix-格式-n">IDE 换行符设置为 Unix 格式(<code>\n</code>)</h2>
-
+</code></pre><h2 id="ide-换行符设置为-unix-格式n">IDE 换行符设置为 Unix 格式(<code>\n</code>)</h2>
 <h2 id="idea">IDEA</h2>
-
 <p><code>Editor</code> &gt; <code>Code Style</code> &gt; <code>Line spearator（for now files）</code> &gt; <code>Unix and MacOS(\n)</code></p>
-
 <h2 id="eclipse">Eclipse</h2>
-
 <p><code>General</code> &gt; <code>Workspace</code> &gt; <code>New text file line delimiter</code> &gt; <code>Unix</code></p>
-
 <h2 id="read-more">Read More</h2>
-
 <ul>
 <li><a href="http://blog.jobbole.com/46200/">GitHub 第一坑：换行符自动转换</a></li>
 <li><a href="https://www.cnblogs.com/flying_bat/archive/2013/09/16/3324769.html">Git中的AutoCRLF与SafeCRLF换行符问题</a></li>
@@ -208,19 +182,16 @@ git config --global core.safecrlf warn
 
   <aside class="book-toc level-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#git-中的换行符问题">Git 中的换行符问题</a>
-<ul>
-<li><a href="#自动转化-core-autocrlf-配置">自动转化（<code>core.autocrlf</code>）配置</a></li>
-<li><a href="#开启提交检查-core-safecrlf">开启提交检查（<code>core.safecrlf</code>）</a></li>
-<li><a href="#tortoisegit-设置">TortoiseGit 设置</a></li>
-<li><a href="#修改-git-配置文件-gitconfig">修改 Git 配置文件 <code>.gitconfig</code></a></li>
-<li><a href="#ide-换行符设置为-unix-格式-n">IDE 换行符设置为 Unix 格式(<code>\n</code>)</a></li>
-<li><a href="#idea">IDEA</a></li>
-<li><a href="#eclipse">Eclipse</a></li>
-<li><a href="#read-more">Read More</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#自动转化coreautocrlf配置">自动转化（<code>core.autocrlf</code>）配置</a></li>
+    <li><a href="#开启提交检查coresafecrlf">开启提交检查（<code>core.safecrlf</code>）</a></li>
+    <li><a href="#tortoisegit-设置">TortoiseGit 设置</a></li>
+    <li><a href="#修改-git-配置文件-gitconfig">修改 Git 配置文件 <code>.gitconfig</code></a></li>
+    <li><a href="#ide-换行符设置为-unix-格式n">IDE 换行符设置为 Unix 格式(<code>\n</code>)</a></li>
+    <li><a href="#idea">IDEA</a></li>
+    <li><a href="#eclipse">Eclipse</a></li>
+    <li><a href="#read-more">Read More</a></li>
+  </ul>
 </nav>
   </aside>
 

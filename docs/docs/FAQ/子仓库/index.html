@@ -7,7 +7,7 @@
 <title>子仓库 | Git</title>
 
 
-<link rel="stylesheet" href="/Git/book.min.79de1f7861b0c98f453c0a93bebf3608a280809e417787746c373699639900d7.css">
+<link rel="stylesheet" href="/Git/book.min.a2277534155c5e81ce2c8ca6a4cd295525f25c75788a2e4e72c3310491c743b1.css">
 
 
 
@@ -51,15 +51,16 @@ https://github.com/alex-shpak/hugo-book
 
 <ul>
 <li><a href="/Git/docs/Config/">Config</a></li>
+<li><a href="/Git/docs/Multi-Repo/">多远程仓库</a></li>
 <li><strong>FAQ</strong>
-
 <ul>
 <li><a href="/Git/docs/FAQ/newline/">Git 换行符问题</a></li>
 <li><a href="/Git/docs/FAQ/%E5%9B%9B%E5%8C%BA%E4%BA%94%E6%80%81/">四区五态</a></li>
 <li><a href="/Git/docs/FAQ/Git%E5%BF%BD%E7%95%A5%E5%B7%B2%E7%BB%8F%E8%A2%AB%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6/">Git忽略已经被提交的文件</a></li>
 <li><a href="/Git/docs/FAQ/%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E5%A4%87%E6%B3%A8/">修改提交备注</a></li>
 <li><a href="/Git/docs/FAQ/%E5%AD%90%E4%BB%93%E5%BA%93/">子仓库</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
 
@@ -92,15 +93,11 @@ https://github.com/alex-shpak/hugo-book
 </header>
 
       
-<article class="markdown">
-
-<h1 id="子模块">子模块</h1>
-
+<article class="markdown"><h1 id="子模块">子模块</h1>
 <p>Git 子模块允许你将一个 Git 仓库当作另外一个 Git 仓库的子目录。这允许你克隆另外一个仓库到你的项目中并且保持你的提交相对独立。</p>
-
 <h2 id="新增子模块">新增子模块</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git submodule add https://github.com/theme-next/hexo-theme-next.git &lt;hexo-theme-next&gt;</code></pre></div>
-<p>该命令会自动 <code>clone</code> 远程仓库的到本地，创建 hexo-theme-next 文件夹，同时生成 <code>.gitmodules</code> 文件，来记录子模块信息。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git submodule add https://github.com/theme-next/hexo-theme-next.git &lt;hexo-theme-next&gt;
+</code></pre></div><p>该命令会自动 <code>clone</code> 远程仓库的到本地，创建 hexo-theme-next 文件夹，同时生成 <code>.gitmodules</code> 文件，来记录子模块信息。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git status
 On branch hexo-sources
 Your branch is up to date with <span style="color:#e6db74">&#39;origin/hexo-sources&#39;</span>.
@@ -109,21 +106,18 @@ Changes to be committed:
   <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git reset HEAD &lt;file&gt;...&#34;</span> to unstage<span style="color:#f92672">)</span>
 
 	new file:   ../.gitmodules
-	new file:   hexo-theme-next</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat ../.gitmodules
+	new file:   hexo-theme-next
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat ../.gitmodules
 <span style="color:#f92672">[</span>submodule <span style="color:#e6db74">&#34;themes/hexo-theme-next&#34;</span><span style="color:#f92672">]</span>
 	path <span style="color:#f92672">=</span> themes/hexo-theme-next
-	url <span style="color:#f92672">=</span> https://github.com/theme-next/hexo-theme-next.git</code></pre></div>
-<h2 id="克隆一个带子模块的项目">克隆一个带子模块的项目</h2>
-
+	url <span style="color:#f92672">=</span> https://github.com/theme-next/hexo-theme-next.git
+</code></pre></div><h2 id="克隆一个带子模块的项目">克隆一个带子模块的项目</h2>
 <p>克隆一个带子模块的项目 <strong>将得到了包含子项目的目录，但里面没有文件</strong>。必须运行两个命令：</p>
-
 <ul>
 <li><code>git submodule init</code> 来初始化你的本地配置文件</li>
 <li><code>git submodule update</code> 来从那个项目拉取所有数据并检出你上层项目里所列的合适的提交</li>
 </ul>
-
 <h2 id="read-more">Read More</h2>
-
 <blockquote>
 <p><a href="https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97">.6 Git 工具 - 子模块</a></p>
 </blockquote>
@@ -150,14 +144,11 @@ Changes to be committed:
 
   <aside class="book-toc level-3 fixed">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#子模块">子模块</a>
-<ul>
-<li><a href="#新增子模块">新增子模块</a></li>
-<li><a href="#克隆一个带子模块的项目">克隆一个带子模块的项目</a></li>
-<li><a href="#read-more">Read More</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#新增子模块">新增子模块</a></li>
+    <li><a href="#克隆一个带子模块的项目">克隆一个带子模块的项目</a></li>
+    <li><a href="#read-more">Read More</a></li>
+  </ul>
 </nav>
   </aside>
 
